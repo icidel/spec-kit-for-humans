@@ -145,6 +145,7 @@ Want to see Spec Kit in action? Watch our [video overview](https://www.youtube.c
 | [Cursor](https://cursor.sh/)                              | ✅ |                                                   |
 | [Gemini CLI](https://github.com/google-gemini/gemini-cli) | ✅ |                                                   |
 | [GitHub Copilot](https://code.visualstudio.com/)          | ✅ |                                                   |
+| [Human](https://en.wikipedia.org/wiki/Human)              | ✅ | Human-driven agent |
 | [IBM Bob](https://www.ibm.com/products/bob)               | ✅ | IDE-based agent with slash command support |
 | [Jules](https://jules.google.com/)                        | ✅ | |
 | [Kilo Code](https://github.com/Kilo-Org/kilocode)         | ✅ |                                                   |

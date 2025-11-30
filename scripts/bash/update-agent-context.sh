@@ -74,6 +74,7 @@ AMP_FILE="$REPO_ROOT/AGENTS.md"
 SHAI_FILE="$REPO_ROOT/SHAI.md"
 Q_FILE="$REPO_ROOT/AGENTS.md"
 BOB_FILE="$REPO_ROOT/AGENTS.md"
+HUMAN_FILE="$REPO_ROOT/HUMAN.md"
 
 # Template file
 TEMPLATE_FILE="$REPO_ROOT/.specify/templates/agent-file-template.md"
@@ -629,9 +630,12 @@ update_specific_agent() {
         bob)
             update_agent_file "$BOB_FILE" "IBM Bob"
             ;;
+        human)
+            update_agent_file "$HUMAN_FILE" "Human"
+            ;;
         *)
             log_error "Unknown agent type '$agent_type'"
-            log_error "Expected: claude|gemini|copilot|cursor-agent|qwen|opencode|codex|windsurf|kilocode|auggie|roo|amp|shai|q|bob"
+            log_error "Expected: claude|gemini|copilot|cursor-agent|qwen|opencode|codex|windsurf|kilocode|auggie|roo|amp|shai|q|bob|human"
             exit 1
             ;;
     esac
@@ -711,6 +715,11 @@ update_all_existing_agents() {
         found_agent=true
     fi
     
+    if [[ -f "$HUMAN_FILE" ]]; then
+        update_agent_file "$HUMAN_FILE" "Human"
+        found_agent=true
+    fi
+
     # If no agent files exist, create a default Claude file
     if [[ "$found_agent" == false ]]; then
         log_info "No existing agent files found, creating default Claude file..."
